@@ -1,0 +1,96 @@
+/* ========== 全局基础 ========== */
+* {
+    box-sizing: border-box;
+  }
+/* 1. 全局：垂直 + 水平 居中内容 */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f2f8ff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+  
+    /* 新增：flex 居中 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  /* ========== 控件区 ========== */
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 0;
+  }
+  
+  /* 下拉 和 按钮 */
+  .controls select,
+  .controls button {
+    font-size: 16px;
+    padding: 10px 20px;
+    min-width: 120px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+  }
+  
+  /* 悬停状态 */
+  .controls select:hover,
+  .controls button:hover:not(:disabled) {
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+  }
+  
+  /* 禁用状态 */
+  .controls button:disabled {
+    cursor: default;
+  }
+  
+  /* ========== 自定义输入框 ========== */
+  #customInputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  #customInputs label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+  }
+  #customInputs input[type="number"] {
+    width: 60px;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  /* ========== 圆圈容器 ========== */
+/*  圆圈容器：取消顶部大外边距，让它跟控件等距排列 */
+#circleContainer {
+    width: 260px;
+    height: 260px;
+    /* 去掉之前的 margin-top/auto */
+    margin: 16px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #circle {
+    width: 120px;
+    height: 120px;
+    background: #e91e63;
+    border-radius: 50%;
+    transition-property: width, height;
+  }
+  
